@@ -1,10 +1,15 @@
 isfullday=1
-randomnumber=$((RANDOM%2))
+isparttime=2
+randomnumber=$((RANDOM%3))
 wageperhr=20
 fulldayhr=8
+partdayhr=4
 if [ $randomnumber -eq $isfullday ]
 then
 wage=$(($wageperhr*$fulldayhr))
+elif [ $randomnumber -eq $isparttime ]
+then
+wage=$(($wageperhr*$partdayhr))
 else
 wage=0
 fi
